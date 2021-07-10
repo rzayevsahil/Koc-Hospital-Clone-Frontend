@@ -22,8 +22,8 @@ export default class PatientService{
         return axios.get("http://localhost:8080/api/patient/getByAgeGreaterThan?age="+age)
     }
 
-    getByCityName(name){
-        return axios.get("http://localhost:8080/api/patient/getByCityName?name="+name)
+    getByName(name){
+        return axios.get("http://localhost:8080/api/patient/getByName?name="+name)
     }
 
     getByEmail(email){
