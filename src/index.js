@@ -10,6 +10,7 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById('root')
   //emirhan yapma böyle skjdhksd
+  //bb
 );
 
 // If you want to start measuring performance in your app, pass a function
