@@ -3,7 +3,7 @@ import axios from "axios";
 export default class PatientService{
  
     add(patient){
-        return axios.post("http://localhost:8080/api/patient/add",patient)
+        return axios.post("http://localhost:8080/api/patient/add",patient) 
     }
 
     update(patient){
