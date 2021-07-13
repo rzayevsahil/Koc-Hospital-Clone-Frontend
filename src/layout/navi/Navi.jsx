@@ -31,8 +31,8 @@ export default function Navi() {
       
       <Menu.Item key="0">
         {" "}
-       <Link to="/"> <Avatar size="large" shape="square"
-         src={"../../../assets/images/kocuniversitesi.jpg"}
+       <Link to="/"> <Avatar size="large" shape="square" style={{width:"13em"}}
+         src={"../../../assets/images/images.png"}
         ></Avatar></Link>
        
        
