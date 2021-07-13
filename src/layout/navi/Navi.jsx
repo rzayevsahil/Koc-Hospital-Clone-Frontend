@@ -1,48 +1,89 @@
-import { Container, Image, Nav, Navbar, NavDropdown } from "react-bootstrap";
 import "./navi.module.css";
+import { Avatar, Layout, Menu } from 'antd'
+import React, { useState } from 'react'
+import { Link, NavLink } from 'react-router-dom';
+import {MenuOutlined ,SearchOutlined } from '@ant-design/icons';
+
 export default function Navi() {
-  return (
-    // <div>
-    //   <nav>
-    //     <ul>
-    //       {" "}
-    //       <li>
-    //         {" "}
-    //         <div>a</div>
-    //       </li>{" "}
-    //       <li>
-    //         <div>b</div>
-    //       </li>
-    //       <li>
-    //         <div>c</div>
-    //       </li>
-    //     </ul>
-    //   </nav>
-    // </div>
-<div>
-    <Navbar bg="light" expand="lg">
-  <Container>
-    <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
-    <Navbar.Toggle aria-controls="basic-navbar-nav" />
-    <Navbar.Collapse id="basic-navbar-nav">
-      <Nav className="me-auto">
-        <Nav.Link href="#home">Home</Nav.Link>
-        <Nav.Link href="#link">Link</Nav.Link>
-        <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-          <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-          <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-          <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-          <NavDropdown.Divider />
-          <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
-          
-        </NavDropdown>
-      </Nav>
+    const [currentKey, setCurrentKey] = useState({ current: "" });
+  const { Header } = Layout;
+  const { current } = currentKey;
+  const [theme, setTheme] = useState("light")
+
+  const handleClick = (e) => {
+    console.log("click ", e);
+    setCurrentKey({ current: e.key });
+  };
+  console.log("current : " + current + "currentKey : + " + currentKey);
+
+  const changeTheme= value =>{
+    setTheme(value?"dark":"light" )
+  }
+    return (
+        <div>
+             <Menu className="ant-menu"
+      onClick={handleClick}
+      selectedKeys={[current]}
+      mode="horizontal"
+      theme={theme}
+      style={{ lineHeight: '80px' }}
+    >
+      
+      <Menu.Item key="0">
+        {" "}
+       <Link to="/"> <Avatar size="large" shape="square"
+         src={"../../../assets/images/kocuniversitesi.jpg"}
+        ></Avatar></Link>
+       
+       
+      </Menu.Item>
     
-    </Navbar.Collapse>
-  </Container>
-  
-</Navbar><br></br>
-<img src={"../../images.png"}/>
-</div>
-  );
+     
+<div style={{display:"flex",position:"relative",marginLeft:"550px"}}>
+      <Menu.Item key="1"> <NavLink
+          to="/categories"
+          activeStyle={{
+            fontWeight: "bold",
+            color: "red",
+          }}
+        >
+          Bölümlerimiz
+        </NavLink></Menu.Item>
+      <Menu.Item key="2">
+        {" "}
+        <NavLink
+          to="/doctors"
+          activeStyle={{
+            fontWeight: "bold",
+            color: "red",
+          }}
+        >
+          Doctorlarımız
+        </NavLink>
+      </Menu.Item>
+      <Menu.Item key="3"> <NavLink
+          to="/contacts"
+          activeStyle={{
+            fontWeight: "bold",
+            color: "red",
+          }}
+        >
+         Bize Ulaşın
+        </NavLink></Menu.Item>
+      <Menu.Item key="4" style={{float:"right"}}>Kurumsal</Menu.Item>
+
+    
+      
+      </div>
+      <div style={{float:"right",display:"flex"}}>
+      <Menu.Item key="6" ><SearchOutlined /> </Menu.Item>
+      <Menu.Item key="5" ><MenuOutlined /> </Menu.Item>
+      </div>
+      {/* <div>
+      // <Menu.Item key="5" ><Switch onChange={changeTheme} /> Change Theme </Menu.Item> 
+      </div> */}
+      
+    </Menu>
+        </div>
+    )
 }
