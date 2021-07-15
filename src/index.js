@@ -10,9 +10,6 @@ ReactDOM.render(
     <App />
     </BrowserRouter>,
   document.getElementById('root')
-  //emirhan yapma böyle skjdhksd
-  //aa
-  //bb
 );
 
 // If you want to start measuring performance in your app, pass a function

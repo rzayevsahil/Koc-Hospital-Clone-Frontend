@@ -1,0 +1,46 @@
+$graycolor: gray;
+$blackcolor:black;
+$whitecolor:white;
+$redcolor:red;
+$bluecolor:blue;
+.nav{
+background-color: $whitecolor;
+display: flex;
+flex-flow: row wrap;
+justify-content: space-between;
+height: auto;
+&_content{
+  margin: 10px;
+    padding: 15px;
+ 
+}
+&_image{
+margin:5px 0px 5px 15px;
+&_koc{
+    border-radius: 25px;
+    width: 40%;
+    height: 90px;
+    cursor: pointer;
+
+}
+}
+&_menu{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+    padding: 15px;
+   &-right{
+cursor:pointer
+   }
+}
+}
+a{
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+   color:$blackcolor;
+    &:hover{
+      color:$redcolor;
+      cursor: pointer;
+    }
+}

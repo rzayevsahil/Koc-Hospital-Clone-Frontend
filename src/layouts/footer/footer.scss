@@ -1,0 +1,73 @@
+
+
+footer{
+    height:600px;
+    width: 100%;
+    background-image:url("https://www.kuh.ku.edu.tr/KocUniversitesiHastanesi/media/KUH/kuh-960x640-min.jpg");
+
+opacity: 0.5;
+background-size: cover;
+}
+
+.footer{
+    display: flex;
+    justify-content: center;
+    &_article{
+      margin:40px;
+      
+    }
+}
+ul{
+    list-style: none;
+  >li{
+      align-items: center;
+      color:white;
+  }
+}
+.flex-right {
+    text-align: center;
+
+}
+
+.input-container {
+    margin: 8px 0px;
+
+}
+
+input[type=text],
+input[type=password],
+input[type=email],
+textarea {
+
+    width: 100%;
+    padding: 12px 20px;
+    color: black;
+    box-sizing: border-box;
+    border: none;
+
+
+}
+input::placeholder {
+    font-size: medium;
+    font-size: 15px;
+    color: black;
+}
+
+button {
+    background-color:red;
+    color:white;
+    padding: 10px;
+    width: 50%;
+    height: 50px;
+    cursor: pointer;
+    font-size: 15px;
+    background: linear-gradient(to left, red 50%, salmon 50%) right;
+    background-size: 200%;
+    transition: .5s ease-out
+
+
+}
+
+button:hover{
+    background-position: left;
+}
